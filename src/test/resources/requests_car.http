@@ -1,0 +1,31 @@
+###
+GET http://localhost:8080/transport/2
+Content-Type: application/json
+
+###
+POST http://localhost:8080/transport
+Accept: application/json
+Content-Type: application/json
+
+{
+  "brand": "AUDI"
+}
+
+###
+PUT http://localhost:8080/transport
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": 1,
+  "brand": "Ford",
+  "version": 2
+}
+
+###
+DELETE http://localhost:8080/transport/3
+Content-Type: application/json
+
+###
+GET http://localhost:8080/transport/list?pageSize=2
+Content-Type: application/json

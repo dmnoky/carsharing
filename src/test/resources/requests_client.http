@@ -1,0 +1,37 @@
+###
+GET http://localhost:8080/client/1
+Content-Type: application/json
+
+###
+POST http://localhost:8080/client
+Accept: application/json
+Content-Type: application/json
+
+{
+  "firstName": "client2",
+  "lastName": "client2",
+  "phone": "+766655544331",
+  "email": "213@gg.com"
+}
+
+###
+PUT http://localhost:8080/client
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": 3,
+  "firstName": "client3",
+  "lastName": "client3",
+  "phone": "86665554433",
+  "email": "2134@gg.com",
+  "version": 4
+}
+
+###
+DELETE http://localhost:8080/client/4
+Content-Type: application/json
+
+###
+GET http://localhost:8080/client/list?pageSize=22
+Content-Type: application/json
