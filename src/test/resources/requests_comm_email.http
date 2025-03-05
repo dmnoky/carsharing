@@ -1,0 +1,33 @@
+###
+GET http://localhost:8080/email/2
+Content-Type: application/json
+
+###
+POST http://localhost:8080/email
+Accept: application/json
+Content-Type: application/json
+
+{
+  "parentId": "f147e891-e3c6-47a8-a68a-46daf35542f6",
+  "email": "eeeeema@mail.ru",
+  "isPrimary": true
+}
+
+###
+PUT http://localhost:8080/email
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": 1,
+  "email": "eeeeema@mail.ru",
+  "version": 2
+}
+
+###
+DELETE http://localhost:8080/email/3
+Content-Type: application/json
+
+###
+GET http://localhost:8080/email/list?pageSize=2
+Content-Type: application/json

@@ -1,20 +1,25 @@
 package com.tbank.learn.carsharing.model.user
 
-import jakarta.validation.constraints.NotBlank
+import com.fasterxml.jackson.annotation.JsonIgnore
+import jakarta.validation.constraints.NotNull
+import jakarta.validation.constraints.Size
 import org.springframework.data.annotation.Id
 import org.springframework.data.annotation.Version
+import java.util.*
 
-open class User(
+//@Table
+data class User(
         @Id
-        open val id: Long,
-        @NotBlank
-        open val lastName: String,
-        @NotBlank
-        open val firstName: String,
-        open val middleName: String?=null,
-        open val email: String?=null,
-        //@ValidPhoneNumber
-        open val phone: String?=null,
+        val id: UUID?, //GeneratedValue == Client.Id
+        @NotNull
+        @Size(min = 5, message = "Не меньше 5 знаков")
+        val username: String,
+        @JsonIgnore
+        @NotNull
+        @Size(min = 5, message = "Не меньше 5 знаков")
+        val password: String,
+        @Transient
+        val passwordConfirm: String,
         @Version
-        val version: Long?=0,
+        val version: Long,
 )

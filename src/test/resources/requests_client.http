@@ -1,5 +1,5 @@
 ###
-GET http://localhost:8080/client/1
+GET http://localhost:8080/client/f147e891-e3c6-47a8-a68a-46daf35542f6
 Content-Type: application/json
 
 ###
@@ -8,24 +8,58 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "firstName": "client2",
-  "lastName": "client2",
-  "phone": "+766655544331",
-  "email": "213@gg.com"
+  "firstName": "Клиент",
+  "lastName": "Клиент"
 }
 
 ###
-PUT http://localhost:8080/client
+POST http://localhost:8080/client
 Accept: application/json
 Content-Type: application/json
 
 {
-  "id": 3,
-  "firstName": "client3",
-  "lastName": "client3",
-  "phone": "86665554433",
-  "email": "2134@gg.com",
-  "version": 4
+  "firstName": "Клиент",
+  "lastName": "Клиент",
+  "email": [
+    {
+    "email": "321",
+    "isPrimary": false,
+    "parentId": "d326a9c0-ba38-4809-aa9f-483a026f4d47"
+    },
+    {
+      "email": "wqe@qwe.wqe",
+      "isPrimary": true,
+      "parentId": "d326a9c0-ba38-4809-aa9f-483a026f4d47"
+    }],
+  "phone": [{
+    "phone": "89998887766 asqwqwqwqwdsadas",
+    "parentId": "d326a9c0-ba38-4809-aa9f-483a026f4d47"
+  }]
+}
+
+###
+PUT http://localhost:8080/client/update
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": "c93009d4-b932-43ae-b95c-abd6498daf84",
+  "firstName": "Клиентт",
+  "lastName": "Клиент Фааа312",
+  "version": 7
+}
+
+###
+PUT http://localhost:8080/client/update/light
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": "c93009d4-b932-43ae-b95c-abd6498daf84",
+  "firstName": "Клиенгт",
+  "lastName": "Клиенгт",
+  "middleName": " ",
+  "version": 2
 }
 
 ###

@@ -1,6 +1,6 @@
 package com.tbank.learn.carsharing.controller;
 
-import com.tbank.learn.carsharing.model.Order
+import com.tbank.learn.carsharing.model.order.Order
 import com.tbank.learn.carsharing.service.OrderService
 import jakarta.validation.Valid
 import org.springframework.data.domain.Pageable
@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType.APPLICATION_JSON_VALUE
 import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.annotation.*
+import java.util.*
 
 @RequestMapping("/order")
 @RestController
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.*
 class OrderController (val orderService: OrderService) {
 
     @GetMapping(value = ["/{id}"], produces = [APPLICATION_JSON_VALUE])
-    fun getOrder(@PathVariable("id") id: Long): Order? {
+    fun getOrder(@PathVariable("id") id: UUID): Order? {
         return orderService.getById(id)
     }
 
@@ -31,7 +32,7 @@ class OrderController (val orderService: OrderService) {
     }
 
     @DeleteMapping(value = ["/{id}"])
-    fun deleteOrder(@PathVariable("id") id: Long) {
+    fun deleteOrder(@PathVariable("id") id: UUID) {
         orderService.deleteById(id)
     }
 
